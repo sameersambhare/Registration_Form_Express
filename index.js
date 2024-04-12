@@ -33,7 +33,7 @@ app.post("/register", async function (req, res) {
     });
     //Checking for the already registered user
     if (!existingUser) {
-      const registrationData = new registrationModel({
+      const registrationData = await new registrationModel({
         name,
         email,
         password,
