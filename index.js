@@ -36,14 +36,14 @@ app.post("/register", async function (req, res) {
         password,
       });
       await registrationData.save();
-      res.redirect("/success");
+      res.redirect("/success1");
     } else {
       console.log("User already exits.");
-      res.redirect("/error");
+      res.redirect("/error1");
     }
   } catch (error) {
     console.log(error);
-    res.redirect("/error",{error});
+    res.redirect("/error1",{error});
   }
 });
 app.get("/success", function (req, res) {
