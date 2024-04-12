@@ -21,7 +21,7 @@ const registrationModel = mongoose.model("Registrations", registrationSchema);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/pages/index.html");
+  res.sendFile(__dirname + "/pages/index1.html");
 });
 app.post("/register", async function (req, res) {
   try {
@@ -43,14 +43,14 @@ app.post("/register", async function (req, res) {
     }
   } catch (error) {
     console.log(error);
-    res.redirect("/error");
+    res.redirect("/error",{error});
   }
 });
 app.get("/success", function (req, res) {
-  res.sendFile(__dirname + "/pages/success.html");
+  res.sendFile(__dirname + "/pages/success1.html");
 });
 app.get("/error", function (req, res) {
-  res.sendFile(__dirname + "/pages/error.html");
+  res.sendFile(__dirname + "/pages/error1.html");
 });
 app.listen(port, () => {
   console.log(`Starting the server on PORT ${port}`);
