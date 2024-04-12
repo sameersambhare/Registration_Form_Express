@@ -1,51 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <style>
-        *{
-    padding: 0;
-    margin: 0;
-    font-family: monospace;
-}
-#Page{
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-#Registration-box{
-    border: 1px solid black;
-    padding: 40px 40px;
-}
-#Registration-Form h1{
-    margin: 10px 10px;
-}
-    </style>
+	<title>Registration-Form-Express</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="shortcut icon" href="/images/favicon.png">
 </head>
 <body>
-    <section id="Page">
-        <div id="Registration-box">
-            <h1>Registration Form</h1>
-            <form action="/register" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter the good name">
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter the email">
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter the password">
-                <br>
-                <button type="submit">Submit</button>
+	<img class="wave" src="/images/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="/images/bg.svg">
+		</div>
+		<div class="login-content">
+            <!---------------------------------------- Form ------------------------------------->
+			<form action="/register" method="post">
+				<img src="/images/avatar.svg">
+				<h2 class="title">Welcome!</h2>
+                <!------------- Name ------------------>
+           		<div class="input-div one">
+           		   <div class="i">
+                    <i class="fa-solid fa-user" style="color: #63E6BE;"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Name</h5>
+           		   		<input type="text" name="name" class="input" required>
+           		   </div>
+           		</div>
+                <!------------- Email ------------------>
+                <div>
+                   <div class="input-div pass">
+                    <div class="i"> 
+                        <i class="fa-solid fa-envelope" style="color: #63E6BE;"></i>
+                    </div>
+                    <div class="div">
+                         <h5>Email</h5>
+                         <input type="email" name="email" class="input" required>
+                 </div>
+              </div>
+              <!------------- Password ------------------>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+<i class="fa-solid fa-lock" style="color: #63E6BE;"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" name="password" class="input" required>
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+            	<button class="btn" type="submit">Register</button>
             </form>
         </div>
-    </section>
+    </div>
+    <!---------------------------------------- Javascript ------------------------------------->
+   <script src="/scripts/main.js"></script>
 </body>
 </html>

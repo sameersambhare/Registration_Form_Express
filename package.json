@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.2.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "font-awesome": "^4.7.0",
     "mongodb": "^6.5.0",
     "mongoose": "^8.3.1"
   }

@@ -20,18 +20,15 @@ const registrationSchema = new mongoose.Schema({
 const registrationModel = mongoose.model("Registrations", registrationSchema);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-//Home
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/pages/index.html");
 });
-//register
 app.post("/register", async function (req, res) {
   try {
     const { name, email, password } = req.body;
     const existingUser = await registrationModel.findOne({
       email: email,
     });
-    //Checking for the already registered user
     if (!existingUser) {
       const registrationData = await new registrationModel({
         name,
@@ -55,7 +52,6 @@ app.get("/success", function (req, res) {
 app.get("/error", function (req, res) {
   res.sendFile(__dirname + "/pages/error.html");
 });
-//Listening on the port 3000
 app.listen(port, () => {
   console.log(`Starting the server on PORT ${port}`);
 });
