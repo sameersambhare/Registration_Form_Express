@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-
+const path = require("path");
 const app = express();
 dotenv.config();
 
@@ -21,7 +21,7 @@ const registrationSchema = new mongoose.Schema({
 const registrationModel = mongoose.model("Registrations", registrationSchema);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname, "/pages/index1.html"));
+app.use(express.static(path.join(__dirname, "/pages/index1.html")));
 app.get("*", function (req, res) {
   res.sendFile(__dirname + "/pages/index1.html");
 });
