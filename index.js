@@ -8,6 +8,7 @@ dotenv.config();
 
 const port = process.env.PORT || 3000;
 const username = process.env.MONGODB_USERNAME;
+console.log(username);
 const pass = process.env.MONGODB_PASSWORD;
 mongoose.connect(
   `mongodb+srv://${username}:${pass}@cluster0.u675bel.mongodb.net/RegistrationDB`
@@ -20,7 +21,8 @@ const registrationSchema = new mongoose.Schema({
 const registrationModel = mongoose.model("Registrations", registrationSchema);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.get("/", function (req, res) {
+app.use(express.static(__dirname, "/pages/index1.html"));
+app.get("*", function (req, res) {
   res.sendFile(__dirname + "/pages/index1.html");
 });
 app.post("/register", async function (req, res) {
